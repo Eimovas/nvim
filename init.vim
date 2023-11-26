@@ -12,6 +12,10 @@ else
     " ordinary Neovim
 endif
 
+" Python provider setup
+let g:python3_host_prog = '/home/eimantas/miniconda3/bin/python3'
+
+
 " Sets up the plugin manager
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -23,6 +27,8 @@ endif
 call plug#begin()
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 " Custom keymaps
